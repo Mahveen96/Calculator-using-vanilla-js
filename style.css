@@ -1,0 +1,89 @@
+:root {
+    --background-color-one: maroon;
+    --background-color-two: navy;
+    --primary-color: rgba(255, 255, 255, 0.397);
+    --button-color-one: rgba(103, 165, 223, 0.623);
+    --button-color-two: rgba(53, 106, 155, 0.623);
+    --screen-color: rgba(32, 31, 31, 0.541);
+    --text-color: white;
+    --box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    --text-shadow: 0 1px 2px #9d64c4,
+    1px 3px 1px #9759c0, 
+    2px 5px 1px #8b46b9, 
+    4px 7px 1px #7d3fa6, 
+    6px 9px 1px #6f3894,
+    8px 11px 1px #613181,
+    10px 13px 1px #532a6f,
+    12px 15px 1px #45235c,
+    14px 17px 1px #381c4a;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, var(--background-color-one), var(--background-color-two));
+    
+}
+
+h1 {
+    color: var(--text-color);
+    text-align: center;
+    text-shadow: var(--text-shadow);
+    font-size: 3rem;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content:  center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    background-color: var(--button-color-one);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 2rem;
+    outline: none;
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--box-shadow);
+}
+
+.calculator-grid > button:hover {
+    background-color: var(--button-color-two);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: var(--screen-color);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    box-shadow: var(--box-shadow)
+}
+
+.output .previous-operand {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.output .current-operand {
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
