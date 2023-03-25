@@ -37,7 +37,7 @@ class Calculator {
       if (isNaN(prev) || isNaN(current)) return;
       switch (this.operation) {
         case '+':
-          computation = prev + current;
+          computation = prev + parseInt(current);
           break;
         case '-':
           computation = prev - current;
